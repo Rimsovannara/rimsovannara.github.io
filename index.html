@@ -10,6 +10,7 @@
       margin: 0;
       padding: 0;
       box-sizing: border-box;
+      transition: background-color 0.5s ease, color 0.3s ease;
     }
 
     body {
@@ -21,6 +22,11 @@
       overflow: hidden;
       position: relative;
       background: #f0f0f0;
+      transition: background 0.5s ease;
+    }
+
+    body.dark-mode {
+      background: #121212;
     }
 
     .animated-bg {
@@ -34,6 +40,11 @@
       animation: gradientAnimation 15s ease infinite;
       z-index: -1;
       filter: brightness(0.8);
+      transition: filter 0.5s ease;
+    }
+
+    body.dark-mode .animated-bg {
+      filter: brightness(0.3) saturate(1.2);
     }
 
     @keyframes gradientAnimation {
@@ -61,33 +72,118 @@
       box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
       margin: 20px;
       z-index: 1;
+      transition: all 0.5s ease;
     }
 
-    .logo {
-      width: 120px;
-      height: 120px;
+    body.dark-mode .container {
+      background: rgba(0, 0, 0, 0.2);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+    }
+
+    /* Theme toggle button */
+    .theme-toggle {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      width: 50px;
+      height: 50px;
       border-radius: 50%;
-      margin: 0 auto 20px;
-      object-fit: cover;
-      border: 3px solid white;
-      background: linear-gradient(45deg, #ff9a9e, #fad0c4, #a1c4fd, #c2e9fb);
+      background: rgba(255, 255, 255, 0.2);
+      backdrop-filter: blur(5px);
       display: flex;
       justify-content: center;
       align-items: center;
-      font-size: 50px;
-      color: white;
+      cursor: pointer;
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      z-index: 10;
+      transition: all 0.3s ease;
     }
 
+    .theme-toggle:hover {
+      transform: rotate(30deg) scale(1.1);
+      background: rgba(255, 255, 255, 0.3);
+    }
+
+    .theme-toggle i {
+      font-size: 24px;
+      color: white;
+      transition: all 0.3s ease;
+    }
+
+    /* Logo enhancements */
+    .logo-container {
+      position: relative;
+      width: 140px;
+      height: 140px;
+      margin: 0 auto 20px;
+      perspective: 1000px;
+    }
+
+    .logo {
+      width: 100%;
+      height: 100%;
+      border-radius: 50%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 60px;
+      color: white;
+      background: linear-gradient(45deg, #ff9a9e, #fad0c4, #a1c4fd, #c2e9fb);
+      border: 3px solid white;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+      transform-style: preserve-3d;
+      transition: all 0.5s ease;
+      overflow: hidden;
+    }
+
+    body.dark-mode .logo {
+      background: linear-gradient(45deg, #8a5a5d, #a07e76, #5d7ab0, #7aa9c0);
+      border: 3px solid rgba(255, 255, 255, 0.8);
+      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.5);
+    }
+
+    .logo::before {
+      content: '';
+      position: absolute;
+      top: -50%;
+      left: -50%;
+      width: 200%;
+      height: 200%;
+      background: radial-gradient(circle, rgba(255,255,255,0.2) 0%, transparent 70%);
+      transform: rotate(30deg);
+      transition: all 0.5s ease;
+    }
+
+    .logo:hover {
+      transform: rotateY(20deg) scale(1.05);
+      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.3);
+    }
+
+    .logo:hover::before {
+      transform: rotate(0deg);
+    }
+
+    /* Content styling */
     h1 {
       font-size: 2.5rem;
       margin-bottom: 10px;
       text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+      letter-spacing: 0.5px;
+    }
+
+    body.dark-mode h1 {
+      text-shadow: 0 2px 8px rgba(0, 0, 0, 0.6);
     }
 
     .subtitle {
       font-size: 1.2rem;
       margin-bottom: 30px;
       opacity: 0.9;
+      font-weight: 300;
+      max-width: 80%;
+      margin-left: auto;
+      margin-right: auto;
     }
 
     .social-links {
@@ -108,6 +204,30 @@
       transition: all 0.3s ease;
       backdrop-filter: blur(5px);
       border: 1px solid rgba(255, 255, 255, 0.1);
+      position: relative;
+      overflow: hidden;
+      z-index: 1;
+    }
+
+    body.dark-mode a {
+      background: rgba(0, 0, 0, 0.2);
+      border: 1px solid rgba(255, 255, 255, 0.05);
+    }
+
+    a::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 0%;
+      height: 100%;
+      background: rgba(255, 255, 255, 0.2);
+      transition: width 0.5s ease;
+      z-index: -1;
+    }
+
+    body.dark-mode a::before {
+      background: rgba(255, 255, 255, 0.1);
     }
 
     a:hover {
@@ -116,15 +236,29 @@
       box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
     }
 
+    body.dark-mode a:hover {
+      background: rgba(0, 0, 0, 0.3);
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.4);
+    }
+
+    a:hover::before {
+      width: 100%;
+    }
+
     a i {
       margin-right: 15px;
       font-size: 24px;
       width: 30px;
       text-align: center;
+      transition: transform 0.3s ease;
+    }
+
+    a:hover i {
+      transform: scale(1.2);
     }
 
     .facebook i { color: #1877f2; }
-    .messenger i { color: #0084ff; } /* Messenger blue color */
+    .messenger i { color: #0084ff; }
     .telegram i { color: #0088cc; }
     .discord i { color: #5865F2; }
     .whatsapp i { color: #25D366; }
@@ -133,12 +267,34 @@
       margin-top: 30px;
       font-size: 0.9rem;
       opacity: 0.8;
-      white-space: nowrap;
-      overflow: hidden;
-      text-overflow: ellipsis;
       padding: 0 5px;
     }
 
+    body.dark-mode .footer {
+      opacity: 0.7;
+    }
+
+    /* Animations */
+    .logo-container, h1, .subtitle, .social-links, .footer {
+      opacity: 0;
+      transform: translateY(20px);
+      animation: fadeInUp 0.6s ease forwards;
+    }
+
+    .logo-container { animation-delay: 0.2s; }
+    h1 { animation-delay: 0.3s; }
+    .subtitle { animation-delay: 0.4s; }
+    .social-links { animation-delay: 0.5s; }
+    .footer { animation-delay: 0.6s; }
+
+    @keyframes fadeInUp {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    /* Responsive adjustments */
     @media (max-width: 500px) {
       .container {
         padding: 30px 15px;
@@ -146,10 +302,12 @@
       h1 {
         font-size: 2rem;
       }
+      .logo-container {
+        width: 110px;
+        height: 110px;
+      }
       .logo {
-        width: 100px;
-        height: 100px;
-        font-size: 40px;
+        font-size: 45px;
       }
       .footer {
         font-size: 0.75rem;
@@ -163,6 +321,13 @@
         padding: 12px 15px;
         font-size: 16px;
       }
+      .theme-toggle {
+        width: 40px;
+        height: 40px;
+      }
+      .theme-toggle i {
+        font-size: 20px;
+      }
     }
 
     @media (max-width: 380px) {
@@ -172,6 +337,9 @@
       h1 {
         font-size: 1.8rem;
       }
+      .subtitle {
+        font-size: 0.9rem;
+      }
     }
   </style>
 </head>
@@ -179,45 +347,94 @@
   <div class="animated-bg"></div>
   
   <div class="container">
-    <div class="logo">
-      <i class="fas fa-user"></i>
+    <div class="theme-toggle" id="themeToggle">
+      <i class="fas fa-moon"></i>
     </div>
+    
+    <div class="logo-container">
+      <div class="logo">
+        <i class="fas fa-user"></i>
+      </div>
+    </div>
+    
     <h1>Sovannara Rim</h1>
     <p class="subtitle">Connect with me on social media</p>
     
     <div class="social-links">
-      <a href="https://www.facebook.com/sovannararim/" target="_blank" class="facebook">
+      <a href="https://www.facebook.com/sovannararim/" target="_blank" rel="noopener noreferrer" class="facebook">
         <i class="fab fa-facebook-f"></i>
         <span>Facebook</span>
       </a>
-      <!-- Added Messenger link here -->
-      <a href="https://m.me/sovannararim" target="_blank" class="messenger">
+      <a href="https://m.me/sovannararim" target="_blank" rel="noopener noreferrer" class="messenger">
         <i class="fab fa-facebook-messenger"></i>
         <span>Messenger</span>
       </a>
-      <a href="https://t.me/RIM_SOVANNARA" target="_blank" class="telegram">
+      <a href="https://t.me/RIM_SOVANNARA" target="_blank" rel="noopener noreferrer" class="telegram">
         <i class="fab fa-telegram-plane"></i>
         <span>Telegram</span>
       </a>
-      <a href="https://discord.gg/evuDPXhD" target="_blank" class="discord">
+      <a href="https://discord.gg/evuDPXhD" target="_blank" rel="noopener noreferrer" class="discord">
         <i class="fab fa-discord"></i>
         <span>Discord</span>
       </a>
-      <a href="https://wa.me/855964908348" target="_blank" class="whatsapp">
+      <a href="https://wa.me/855964908348" target="_blank" rel="noopener noreferrer" class="whatsapp">
         <i class="fab fa-whatsapp"></i>
         <span>WhatsApp</span>
       </a>
     </div>
     
-    <p class="footer">© 2025 Sovannara Rim | All Rights Reserved</p>
+    <p class="footer">© <span id="currentYear"></span> Sovannara Rim | All Rights Reserved</p>
   </div>
   
   <script>
+    // Theme toggle functionality
+    const themeToggle = document.getElementById('themeToggle');
+    const themeIcon = themeToggle.querySelector('i');
+    const body = document.body;
+    
+    themeToggle.addEventListener('click', () => {
+      body.classList.toggle('dark-mode');
+      
+      if (body.classList.contains('dark-mode')) {
+        themeIcon.classList.remove('fa-moon');
+        themeIcon.classList.add('fa-sun');
+        localStorage.setItem('theme', 'dark');
+      } else {
+        themeIcon.classList.remove('fa-sun');
+        themeIcon.classList.add('fa-moon');
+        localStorage.setItem('theme', 'light');
+      }
+    });
+    
+    // Check for saved theme preference
+    const savedTheme = localStorage.getItem('theme');
+    if (savedTheme === 'dark') {
+      body.classList.add('dark-mode');
+      themeIcon.classList.remove('fa-moon');
+      themeIcon.classList.add('fa-sun');
+    } else if (savedTheme === 'light') {
+      body.classList.remove('dark-mode');
+    }
+    
+    // Set current year in footer
+    document.getElementById('currentYear').textContent = new Date().getFullYear();
+    
+    // Parallax effect
     document.addEventListener('mousemove', (e) => {
       const bg = document.querySelector('.animated-bg');
       const x = (window.innerWidth - e.pageX) / 50;
       const y = (window.innerHeight - e.pageY) / 50;
       bg.style.transform = `translate(${x}px, ${y}px)`;
+    });
+    
+    // Logo interaction
+    const logo = document.querySelector('.logo');
+    logo.addEventListener('mouseenter', () => {
+      logo.style.transform = 'rotateY(20deg) scale(1.05)';
+    });
+    
+    logo.addEventListener('mouseleave', () => {
+      logo.style.transform = 'rotateY(0) scale(1)';
     });
   </script>
 </body>
