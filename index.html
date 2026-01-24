@@ -10,15 +10,15 @@
     content="Rim Sovannara, social media, contact, Facebook, Messenger, Telegram, Discord, WhatsApp">
   <meta name="author" content="Rim Sovannara">
   <meta name="robots" content="index, follow">
-  <meta property="og:title" content="Rim Sovannara - Social Links">
+  <meta property="og:title" content="Rim Sovannara - Profile">
   <meta property="og:description" content="Connect with Rim Sovannara on social media platforms">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://rimsovannara.github.io">
   <meta name="twitter:card" content="summary">
-  <meta name="twitter:title" content="Rim Sovannara - Social Links">
+  <meta name="twitter:title" content="Rim Sovannara - Profile">
   <meta name="twitter:description" content="Connect with Rim Sovannara on social media platforms">
 
-  <title>Rim Sovannara - Social Links</title>
+  <title>Rim Sovannara - Profile</title>
 
   <!-- Preload critical resources -->
   <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" as="style">
@@ -360,12 +360,26 @@
       }
 
       h1 {
-        font-size: 2rem;
+        font-size: 1.8rem;
       }
 
-      .theme-toggle {
-        top: 20px;
-        right: 20px;
+      .subtitle {
+        font-size: 1rem;
+        margin-bottom: 30px;
+      }
+
+      .footer {
+        margin-top: 32px;
+        font-size: 0.75rem;
+        /* Slightly smaller to fit single line if possible */
+        text-align: center;
+        white-space: nowrap;
+        /* Tries to keep it on one line */
+      }
+
+      /* Reset specific adjustments */
+      .footer span#currentYear::after {
+        content: none;
       }
     }
   </style>
@@ -387,7 +401,7 @@
       </div>
     </div>
 
-    <h1>Rim Sovannara</h1>
+    <h1>RIM SOVANNARA</h1>
     <p class="subtitle">Connect with me on social media</p>
 
     <nav class="social-links" role="navigation" aria-label="Social media links">
@@ -625,18 +639,7 @@
       }
     });
 
-    // Service Worker registration for PWA capabilities
-    if ('serviceWorker' in navigator) {
-      window.addEventListener('load', () => {
-        navigator.serviceWorker.register('/sw.js')
-          .then(registration => {
-            console.log('SW registered: ', registration);
-          })
-          .catch(registrationError => {
-            console.log('SW registration failed: ', registrationError);
-          });
-      });
-    }
+
   </script>
 </body>
 
