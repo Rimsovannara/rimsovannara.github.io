@@ -6,6 +6,29 @@
     <title>Rim Sovannara | Software Developer</title>
     <!-- SEO Meta Tags -->
     <meta name="description" content="Rim Sovannara - Software Developer portfolio. Showcasing skills, projects, and adapting to new technologies.">
+    <meta name="keywords" content="Rim Sovannara, Software Developer, Android KernelSU, Python Automation, Web Developer, Portfolio">
+    <meta name="author" content="Rim Sovannara">
+    <link rel="canonical" href="https://rimsovannara.github.io/">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://rimsovannara.github.io/">
+    <meta property="og:title" content="Rim Sovannara | Software Developer">
+    <meta property="og:description" content="Software Developer portfolio. Showcasing skills, projects, and adapting to new technologies.">
+    <meta property="og:image" content="https://rimsovannara.github.io/profile.jpg">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://rimsovannara.github.io/">
+    <meta property="twitter:title" content="Rim Sovannara | Software Developer">
+    <meta property="twitter:description" content="Software Developer portfolio. Showcasing skills, projects, and adapting to new technologies.">
+    <meta property="twitter:image" content="https://rimsovannara.github.io/profile.jpg">
+
+    <!-- Preconnect for Performance -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
+
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Outfit:wght@400;600;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css?v=2">
@@ -20,7 +43,13 @@
     <nav class="navbar">
         <div class="nav-content">
             <a href="#" class="logo">Sovannara<span class="text-gradient">.dev</span></a>
-            <ul class="nav-links">
+            
+            <!-- Mobile Menu Button -->
+            <div class="menu-btn" id="menu-btn" aria-label="Toggle Navigation Menu" role="button" tabindex="0">
+                <i class="fa-solid fa-bars"></i>
+            </div>
+
+            <ul class="nav-links" id="nav-links">
                 <li><a href="#home">About</a></li>
                 <li><a href="#skills">Skills</a></li>
                 <li><a href="#projects">Projects</a></li>
@@ -31,7 +60,7 @@
 
     <!-- Hero Section -->
     <section class="hero" id="home">
-        <div class="hero-content">
+        <div class="hero-content reveal">
             <p class="greeting">Hi, my name is</p>
             <h1 class="name"><span class="text-gradient">Rim Sovannara.</span></h1>
             <h2 class="title">I build things for the modern web & OS.</h2>
@@ -41,40 +70,40 @@
                 <a href="#contact" class="btn-secondary">Let's Connect</a>
             </div>
         </div>
-        <div class="hero-image">
+        <div class="hero-image reveal delay-2">
             <div class="image-wrapper">
-                <img src="profile.jpg" alt="Rim Sovannara" onerror="this.src='https://ui-avatars.com/api/?name=Rim+Sovannara&size=400&background=0d1117&color=2196F3'">
+                <img src="profile.jpg" alt="Rim Sovannara" fetchpriority="high" onerror="this.src='https://ui-avatars.com/api/?name=Rim+Sovannara&size=400&background=0d1117&color=2196F3'">
             </div>
         </div>
     </section>
 
     <!-- Skills Section -->
     <section class="skills" id="skills">
-        <div class="section-heading">
+        <div class="section-heading reveal">
             <h2><span class="number">01.</span> My Toolkit</h2>
         </div>
         <div class="skills-grid">
-            <div class="skill-card">
+            <div class="skill-card reveal">
                 <i class="fa-brands fa-python"></i>
                 <h3>Python</h3>
                 <p>Automation & Scripting</p>
             </div>
-            <div class="skill-card">
+            <div class="skill-card reveal delay-1">
                 <i class="fa-brands fa-html5"></i>
                 <h3>Web Dev</h3>
                 <p>HTML, CSS, JavaScript</p>
             </div>
-            <div class="skill-card">
+            <div class="skill-card reveal delay-2">
                 <i class="fa-brands fa-android"></i>
                 <h3>Android</h3>
                 <p>KernelSU & Optimization</p>
             </div>
-            <div class="skill-card">
+            <div class="skill-card reveal delay-3">
                 <i class="fa-brands fa-linux"></i>
                 <h3>Linux</h3>
                 <p>Bash & Server Management</p>
             </div>
-            <div class="skill-card">
+            <div class="skill-card reveal">
                 <i class="fa-brands fa-git-alt"></i>
                 <h3>Git</h3>
                 <p>Version Control</p>
@@ -84,12 +113,12 @@
 
     <!-- Projects Section -->
     <section class="projects" id="projects">
-        <div class="section-heading">
+        <div class="section-heading reveal">
             <h2><span class="number">02.</span> Featured Projects</h2>
         </div>
         <div class="project-list">
             <!-- Project 1 -->
-            <div class="project-card">
+            <div class="project-card reveal">
                 <div class="project-content">
                     <p class="project-overline">Automation Tool</p>
                     <h3 class="project-title">TikTok Auto Unfollower</h3>
@@ -102,13 +131,13 @@
                         <li>Automation</li>
                     </ul>
                     <div class="project-links">
-                        <a href="https://github.com/Rimsovannara/tiktok-auto-unfollower" target="_blank"><i class="fa-brands fa-github"></i></a>
+                        <a href="https://github.com/Rimsovannara/tiktok-auto-unfollower" target="_blank" rel="noopener noreferrer" aria-label="View TikTok Auto Unfollower on GitHub"><i class="fa-brands fa-github"></i></a>
                     </div>
                 </div>
             </div>
 
             <!-- Project 2 -->
-            <div class="project-card">
+            <div class="project-card reveal">
                 <div class="project-content">
                     <p class="project-overline">Android System Utility</p>
                     <h3 class="project-title">KernelSU-Next</h3>
@@ -121,7 +150,7 @@
                         <li>Android Kernel</li>
                     </ul>
                     <div class="project-links">
-                        <a href="https://github.com/Rimsovannara/KernelSU-Next" target="_blank"><i class="fa-brands fa-github"></i></a>
+                        <a href="https://github.com/Rimsovannara/KernelSU-Next" target="_blank" rel="noopener noreferrer" aria-label="View KernelSU-Next on GitHub"><i class="fa-brands fa-github"></i></a>
                     </div>
                 </div>
             </div>
@@ -130,37 +159,98 @@
 
     <!-- Contact Section -->
     <section class="contact" id="contact">
-        <div class="section-heading centered">
+        <div class="section-heading centered reveal">
             <h2><span class="number">03.</span> What's Next?</h2>
         </div>
-        <h2 class="contact-title">Get In Touch</h2>
-        <p class="contact-description">I'm currently open for new opportunities. Whether you have a question, a project to discuss, or just want to say hi, I'll try my best to get back to you!</p>
+        <h2 class="contact-title reveal delay-1">Get In Touch</h2>
+        <p class="contact-description reveal delay-2">I'm currently open for new opportunities. Whether you have a question, a project to discuss, or just want to say hi, I'll try my best to get back to you!</p>
         
-        <div class="social-links-grid">
-            <a href="https://t.me/RIM_SOVANNARA" class="social-btn telegram" target="_blank">
+        <div class="social-links-grid reveal delay-3">
+            <a href="https://t.me/RIM_SOVANNARA" class="social-btn telegram" target="_blank" rel="noopener noreferrer">
                 <i class="fa-brands fa-telegram"></i> Telegram
             </a>
-            <a href="https://discord.gg/evuDPXhD" class="social-btn discord" target="_blank">
+            <a href="https://discord.gg/evuDPXhD" class="social-btn discord" target="_blank" rel="noopener noreferrer">
                 <i class="fa-brands fa-discord"></i> Discord
             </a>
-            <a href="https://m.me/sovannararim" class="social-btn messenger" target="_blank">
+            <a href="https://m.me/sovannararim" class="social-btn messenger" target="_blank" rel="noopener noreferrer">
                 <i class="fa-brands fa-facebook-messenger"></i> Messenger
             </a>
-            <a href="https://wa.me/855964908348" class="social-btn whatsapp" target="_blank">
+            <a href="https://wa.me/855964908348" class="social-btn whatsapp" target="_blank" rel="noopener noreferrer">
                 <i class="fa-brands fa-whatsapp"></i> WhatsApp
             </a>
-            <a href="https://www.facebook.com/sovannararim/" class="social-btn facebook" target="_blank">
+            <a href="https://www.facebook.com/sovannararim/" class="social-btn facebook" target="_blank" rel="noopener noreferrer">
                 <i class="fa-brands fa-facebook-f"></i> Facebook
             </a>
         </div>
     </section>
 
-    <footer>
-        <div class="footer-links">
-            <a href="https://github.com/Rimsovannara" target="_blank"><i class="fa-brands fa-github"></i></a>
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-brand">
+                <h3>Sovannara<span class="text-gradient">.dev</span></h3>
+                <p>Building things for the modern web & OS.</p>
+            </div>
+            <div class="footer-socials">
+                <a href="https://github.com/Rimsovannara" target="_blank" rel="noopener noreferrer" aria-label="GitHub Profile"><i class="fa-brands fa-github"></i></a>
+                <a href="https://t.me/RIM_SOVANNARA" target="_blank" rel="noopener noreferrer" aria-label="Telegram Contact"><i class="fa-brands fa-telegram"></i></a>
+                <a href="https://discord.gg/evuDPXhD" target="_blank" rel="noopener noreferrer" aria-label="Discord Server"><i class="fa-brands fa-discord"></i></a>
+                <a href="https://www.facebook.com/sovannararim/" target="_blank" rel="noopener noreferrer" aria-label="Facebook Profile"><i class="fa-brands fa-facebook-f"></i></a>
+            </div>
         </div>
-        <p>Built with ❤️ by Rim Sovannara</p>
+        <div class="footer-bottom">
+            <p>&copy; <span id="year"></span> Rim Sovannara. All rights reserved.</p>
+            <p class="built-with">Built with ❤️</p>
+        </div>
     </footer>
 
+    <!-- Scripts -->
+    <script>
+        // Set current year in footer
+        document.getElementById('year').textContent = new Date().getFullYear();
+
+        // Mobile Menu Toggle
+        const menuBtn = document.getElementById('menu-btn');
+        const navLinks = document.getElementById('nav-links');
+        const navItems = document.querySelectorAll('.nav-links a');
+
+        menuBtn.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+            const icon = menuBtn.querySelector('i');
+            if(navLinks.classList.contains('active')) {
+                icon.classList.remove('fa-bars');
+                icon.classList.add('fa-xmark');
+            } else {
+                icon.classList.remove('fa-xmark');
+                icon.classList.add('fa-bars');
+            }
+        });
+
+        // Close menu when clicking a link
+        navItems.forEach(item => {
+            item.addEventListener('click', () => {
+                navLinks.classList.remove('active');
+                menuBtn.querySelector('i').classList.remove('fa-xmark');
+                menuBtn.querySelector('i').classList.add('fa-bars');
+            });
+        });
+
+        // Scroll Reveal Animations using IntersectionObserver
+        const revealElements = document.querySelectorAll('.reveal');
+        
+        const revealObserver = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('active');
+                    observer.unobserve(entry.target); // Stop observing once revealed
+                }
+            });
+        }, {
+            root: null,
+            threshold: 0.1,
+            rootMargin: "0px 0px -50px 0px"
+        });
+
+        revealElements.forEach(el => revealObserver.observe(el));
+    </script>
 </body>
 </html>
