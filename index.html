@@ -1,686 +1,163 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description"
-    content="Connect with Rim Sovannara on social media platforms including Facebook, Messenger, Telegram, Discord, and WhatsApp">
-  <meta name="keywords"
-    content="Rim Sovannara, social media, contact, Facebook, Messenger, Telegram, Discord, WhatsApp">
-  <meta name="author" content="Rim Sovannara">
-  <meta name="robots" content="index, follow">
-  <meta property="og:title" content="Rim Sovannara - Profile">
-  <meta property="og:description" content="Connect with Rim Sovannara on social media platforms">
-  <meta property="og:type" content="website">
-  <meta property="og:url" content="https://rimsovannara.github.io">
-  <meta name="twitter:card" content="summary">
-  <meta name="twitter:title" content="Rim Sovannara - Profile">
-  <meta name="twitter:description" content="Connect with Rim Sovannara on social media platforms">
-
-  <title>Rim Sovannara - Profile</title>
-
-  <!-- Preload critical resources -->
-  <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" as="style">
-  <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/webfonts/fa-solid-900.woff2"
-    as="font" type="font/woff2" crossorigin>
-  <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/webfonts/fa-brands-400.woff2"
-    as="font" type="font/woff2" crossorigin>
-
-  <!-- Google Fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-
-  <!-- Stylesheets -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
-    integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
-    crossorigin="anonymous" referrerpolicy="no-referrer">
-
-  <!-- Favicon -->
-  <link rel="icon" type="image/jpeg"
-    href="profile.jpg">
-
-  <style>
-    /* CSS Custom Properties for Premium Theme */
-    :root {
-      /* Premium Light Theme */
-      --bg-primary: #ffffff;
-      --bg-secondary: #f8f9fa;
-      --text-primary: #1a1a1a;
-      --text-secondary: #4a4a4a;
-
-      --card-bg: rgba(255, 255, 255, 0.7);
-      --card-border: rgba(255, 255, 255, 0.5);
-      --glass-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.15);
-
-      --accent-gradient: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-      --hover-bg: rgba(255, 255, 255, 0.9);
-
-      --transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
-      --radius: 24px;
-    }
-
-    /* Premium Dark Theme */
-    body.dark-mode {
-      --bg-primary: #0f172a;
-      --bg-secondary: #1e293b;
-      --text-primary: #f8fafc;
-      --text-secondary: #94a3b8;
-
-      --card-bg: rgba(30, 41, 59, 0.7);
-      --card-border: rgba(255, 255, 255, 0.1);
-      --glass-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.3);
-
-      --hover-bg: rgba(255, 255, 255, 0.1);
-    }
-
-    /* Reset & Base */
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      -webkit-tap-highlight-color: transparent;
-    }
-
-    html {
-      scroll-behavior: smooth;
-    }
-
-    body {
-      font-family: 'Outfit', sans-serif;
-      min-height: 100vh;
-      background: var(--bg-primary);
-      color: var(--text-primary);
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      overflow-x: hidden;
-      overflow-y: auto;
-      /* Allow natural scrolling */
-      padding: 20px;
-      transition: background 0.5s ease;
-    }
-
-    /* Animated Background */
-    .animated-bg {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100vw;
-      height: 100vh;
-      z-index: -1;
-      background:
-        radial-gradient(circle at 15% 50%, rgba(118, 75, 162, 0.15), transparent 25%),
-        radial-gradient(circle at 85% 30%, rgba(102, 126, 234, 0.15), transparent 25%);
-      filter: blur(40px);
-      opacity: 1;
-      transition: opacity 0.5s ease;
-    }
-
-    body.dark-mode .animated-bg {
-      background:
-        radial-gradient(circle at 15% 50%, rgba(118, 75, 162, 0.25), transparent 25%),
-        radial-gradient(circle at 85% 30%, rgba(102, 126, 234, 0.25), transparent 25%);
-    }
-
-    /* Main Container */
-    .container {
-      width: 100%;
-      max-width: 480px;
-      background: var(--card-bg);
-      backdrop-filter: blur(12px);
-      -webkit-backdrop-filter: blur(12px);
-      border: 1px solid var(--card-border);
-      border-radius: var(--radius);
-      padding: 48px 32px;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      box-shadow: var(--glass-shadow);
-      margin: auto;
-      transform: translateY(0);
-      animation: slideUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
-    }
-
-    /* Logo / Profile */
-    .logo-container {
-      width: 120px;
-      height: 120px;
-      margin-bottom: 24px;
-      position: relative;
-    }
-
-    .logo {
-      width: 100%;
-      height: 100%;
-      border-radius: 50%;
-      background: var(--accent-gradient);
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      font-size: 48px;
-      color: white;
-      box-shadow: 0 10px 20px rgba(118, 75, 162, 0.3);
-      position: relative;
-      z-index: 2;
-    }
-
-    .logo::after {
-      content: '';
-      position: absolute;
-      top: -4px;
-      left: -4px;
-      right: -4px;
-      bottom: -4px;
-      border-radius: 50%;
-      background: var(--accent-gradient);
-      z-index: -1;
-      opacity: 0.5;
-      filter: blur(8px);
-      transition: var(--transition);
-    }
-
-    /* Logo Interactions */
-    .logo {
-      cursor: pointer;
-      transition: transform 0.6s cubic-bezier(0.34, 1.56, 0.64, 1);
-    }
-
-    .logo:hover {
-      transform: rotateY(20deg) scale(1.05);
-    }
-
-    .logo.clicked {
-      animation: spin3D 1s cubic-bezier(0.4, 0, 0.2, 1);
-    }
-
-    @keyframes spin3D {
-      0% {
-        transform: perspective(1000px) rotateY(0deg) scale(1);
-      }
-
-      50% {
-        transform: perspective(1000px) rotateY(180deg) scale(1.1);
-      }
-
-      100% {
-        transform: perspective(1000px) rotateY(360deg) scale(1);
-      }
-    }
-
-    /* Text Typography */
-    h1 {
-      font-size: 2.5rem;
-      font-weight: 700;
-      letter-spacing: -0.02em;
-      margin-bottom: 8px;
-      background: linear-gradient(135deg, var(--text-primary) 0%, var(--text-secondary) 100%);
-      background-clip: text;
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-    }
-
-    .subtitle {
-      font-size: 1.1rem;
-      color: var(--text-secondary);
-      font-weight: 400;
-      margin-bottom: 32px;
-      display: flex;
-      align-items: center;
-      gap: 8px;
-    }
-
-    .social-links {
-      width: 100%;
-      display: flex;
-      flex-direction: column;
-      gap: 16px;
-    }
-
-    .social-link {
-      position: relative;
-      display: flex;
-      align-items: center;
-      padding: 18px 24px;
-      background: var(--bg-primary);
-      border: 1px solid var(--card-border);
-      /* Subtle border */
-      border-radius: 16px;
-      text-decoration: none;
-      color: var(--text-primary);
-      font-weight: 600;
-      font-size: 1.05rem;
-      transition: var(--transition);
-      overflow: hidden;
-      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.02);
-    }
-
-    .social-link i {
-      font-size: 24px;
-      width: 32px;
-      margin-right: 16px;
-      display: flex;
-      justify-content: center;
-      transition: var(--transition);
-    }
-
-    .social-link span {
-      flex: 1;
-    }
-
-    .social-link::after {
-      content: '→';
-      opacity: 0;
-      transform: translateX(-10px);
-      transition: var(--transition);
-      color: var(--text-secondary);
-      font-weight: 300;
-    }
-
-    /* Hover Effects */
-    .social-link:hover {
-      transform: translateY(-4px) scale(1.02);
-      box-shadow: 0 12px 24px rgba(0, 0, 0, 0.08);
-      /* Elevated shadow */
-      border-color: rgba(118, 75, 162, 0.3);
-    }
-
-    body.dark-mode .social-link {
-      background: rgba(255, 255, 255, 0.03);
-      /* Subtle glass for dark mode cards */
-    }
-
-    .social-link:hover i {
-      transform: scale(1.1);
-    }
-
-    .social-link:hover::after {
-      opacity: 1;
-      transform: translateX(0);
-    }
-
-    /* Brand Colors on Hover (Subtle Glow) */
-    .facebook:hover i {
-      color: #1877f2;
-      text-shadow: 0 0 15px rgba(24, 119, 242, 0.4);
-    }
-
-    .messenger:hover i {
-      color: #0084ff;
-      text-shadow: 0 0 15px rgba(0, 132, 255, 0.4);
-    }
-
-    .telegram:hover i {
-      color: #0088cc;
-      text-shadow: 0 0 15px rgba(0, 136, 204, 0.4);
-    }
-
-    .discord:hover i {
-      color: #5865F2;
-      text-shadow: 0 0 15px rgba(88, 101, 242, 0.4);
-    }
-
-    .whatsapp:hover i {
-      color: #25D366;
-      text-shadow: 0 0 15px rgba(37, 211, 102, 0.4);
-    }
-
-    .github:hover i {
-      color: #333;
-    }
-
-    body.dark-mode .github:hover i {
-      color: #fff;
-      text-shadow: 0 0 15px rgba(255, 255, 255, 0.4);
-    }
-
-    /* Theme Toggle */
-    .theme-toggle {
-      position: absolute;
-      top: 30px;
-      right: 30px;
-      width: 48px;
-      height: 48px;
-      border-radius: 50%;
-      background: var(--bg-primary);
-      border: none;
-      color: var(--text-primary);
-      cursor: pointer;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      font-size: 20px;
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-      transition: var(--transition);
-      z-index: 100;
-    }
-
-    .theme-toggle:hover {
-      transform: rotate(15deg) scale(1.1);
-      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
-    }
-
-    /* Footer */
-    .footer {
-      margin-top: 48px;
-      font-size: 0.9rem;
-      color: var(--text-secondary);
-      font-weight: 500;
-      opacity: 0.7;
-    }
-
-    /* Keyframes */
-    @keyframes slideUp {
-      from {
-        opacity: 0;
-        transform: translateY(40px);
-      }
-
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
-    }
-
-    /* Mobile */
-    @media (max-width: 500px) {
-      .container {
-        padding: 32px 24px;
-        max-width: 90%;
-      }
-
-      h1 {
-        font-size: 1.8rem;
-      }
-
-      .subtitle {
-        font-size: 1rem;
-        margin-bottom: 30px;
-      }
-
-      .footer {
-        margin-top: 32px;
-        font-size: 0.75rem;
-        /* Slightly smaller to fit single line if possible */
-        text-align: center;
-        white-space: nowrap;
-        /* Tries to keep it on one line */
-      }
-
-      /* Reset specific adjustments */
-      .footer span#currentYear::after {
-        content: none;
-      }
-    }
-  </style>
-
-
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rim Sovannara | Software Developer</title>
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="Rim Sovannara - Software Developer portfolio. Showcasing skills, projects, and adapting to new technologies.">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Outfit:wght@400;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
-
 <body>
-  <div class="animated-bg" aria-hidden="true"></div>
 
-  <main class="container" role="main">
-    <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode" type="button">
-      <i class="fas fa-moon" aria-hidden="true"></i>
-    </button>
-
-    <div class="logo-container">
-      <div class="logo" role="img" aria-label="Profile logo">
-        <img
-          src="profile.jpg"
-          alt="Rim Sovannara" style="width: 100%; height: 100%; object-fit: cover; border-radius: 50%;">
-      </div>
-    </div>
-
-    <h1>RIM SOVANNARA</h1>
-    <p class="subtitle">Connect with me on social media</p>
-
-    <nav class="social-links" role="navigation" aria-label="Social media links">
-      <a href="https://www.facebook.com/sovannararim/" target="_blank" rel="noopener noreferrer"
-        class="social-link facebook" aria-label="Visit my Facebook profile">
-        <i class="fab fa-facebook-f" aria-hidden="true"></i>
-        <span>Facebook</span>
-      </a>
-
-      <a href="https://m.me/sovannararim" target="_blank" rel="noopener noreferrer" class="social-link messenger"
-        aria-label="Send me a message on Facebook Messenger">
-        <i class="fab fa-facebook-messenger" aria-hidden="true"></i>
-        <span>Messenger</span>
-      </a>
-
-      <a href="https://t.me/RIM_SOVANNARA" target="_blank" rel="noopener noreferrer" class="social-link telegram"
-        aria-label="Contact me on Telegram">
-        <i class="fab fa-telegram-plane" aria-hidden="true"></i>
-        <span>Telegram</span>
-      </a>
-
-      <a href="https://discord.gg/evuDPXhD" target="_blank" rel="noopener noreferrer" class="social-link discord"
-        aria-label="Join my Discord server">
-        <i class="fab fa-discord" aria-hidden="true"></i>
-        <span>Discord</span>
-      </a>
-
-      <a href="https://wa.me/855964908348" target="_blank" rel="noopener noreferrer" class="social-link whatsapp"
-        aria-label="Contact me on WhatsApp">
-        <i class="fab fa-whatsapp" aria-hidden="true"></i>
-        <span>WhatsApp</span>
-      </a>
-
-      <a href="https://github.com/Rimsovannara" target="_blank" rel="noopener noreferrer" class="social-link github"
-        aria-label="Visit my GitHub profile">
-        <i class="fab fa-github" aria-hidden="true"></i>
-        <span>GitHub</span>
-      </a>
+    <nav class="navbar">
+        <div class="nav-content">
+            <a href="#" class="logo">Rim<span>.dev</span></a>
+            <ul class="nav-links">
+                <li><a href="#home">About</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#contact" class="btn-primary-small">Contact Me</a></li>
+            </ul>
+        </div>
     </nav>
 
-    <footer class="footer">
-      <p>&copy; <span id="currentYear"></span> Rim Sovannara | All Rights Reserved</p>
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="hero-content">
+            <p class="greeting">Hi, my name is</p>
+            <h1 class="name">Rim Sovannara.</h1>
+            <h2 class="title">I build things for the modern web & OS.</h2>
+            <p class="summary">I am a passionate <strong>Software Developer</strong> who loves learning and adapting to new technologies. From optimizing Android kernels to building smart automation scripts, I turn complex problems into elegant solutions.</p>
+            <div class="hero-cta">
+                <a href="#projects" class="btn-primary">View My Work</a>
+                <a href="#contact" class="btn-secondary">Let's Connect</a>
+            </div>
+        </div>
+        <div class="hero-image">
+            <div class="image-wrapper">
+                <img src="profile.jpg" alt="Rim Sovannara" onerror="this.src='https://ui-avatars.com/api/?name=Rim+Sovannara&size=400&background=0d1117&color=2196F3'">
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section class="skills" id="skills">
+        <div class="section-heading">
+            <h2><span class="number">01.</span> My Toolkit</h2>
+        </div>
+        <div class="skills-grid">
+            <div class="skill-card">
+                <i class="fa-brands fa-python"></i>
+                <h3>Python</h3>
+                <p>Automation & Scripting</p>
+            </div>
+            <div class="skill-card">
+                <i class="fa-brands fa-html5"></i>
+                <h3>Web Dev</h3>
+                <p>HTML, CSS, JavaScript</p>
+            </div>
+            <div class="skill-card">
+                <i class="fa-brands fa-android"></i>
+                <h3>Android</h3>
+                <p>KernelSU & Optimization</p>
+            </div>
+            <div class="skill-card">
+                <i class="fa-brands fa-linux"></i>
+                <h3>Linux</h3>
+                <p>Bash & Server Management</p>
+            </div>
+            <div class="skill-card">
+                <i class="fa-brands fa-git-alt"></i>
+                <h3>Git</h3>
+                <p>Version Control</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section class="projects" id="projects">
+        <div class="section-heading">
+            <h2><span class="number">02.</span> Featured Projects</h2>
+        </div>
+        <div class="project-list">
+            <!-- Project 1 -->
+            <div class="project-card">
+                <div class="project-content">
+                    <p class="project-overline">Automation Tool</p>
+                    <h3 class="project-title">TikTok Auto Unfollower</h3>
+                    <div class="project-description">
+                        <p>A sophisticated Python bot utilizing Playwright to intelligently mass unfollow TikTok accounts. Features human-like interaction delays and randomized behaviors to successfully bypass strict bot detection.</p>
+                    </div>
+                    <ul class="project-tech-list">
+                        <li>Python</li>
+                        <li>Playwright</li>
+                        <li>Automation</li>
+                    </ul>
+                    <div class="project-links">
+                        <a href="https://github.com/Rimsovannara/tiktok-auto-unfollower" target="_blank"><i class="fa-brands fa-github"></i></a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Project 2 -->
+            <div class="project-card">
+                <div class="project-content">
+                    <p class="project-overline">Android System Utility</p>
+                    <h3 class="project-title">KernelSU-Next</h3>
+                    <div class="project-description">
+                        <p>An advanced Kernel-based root solution for Android devices. Contributed to expanding system-level capabilities and fine-tuning advanced OS operations.</p>
+                    </div>
+                    <ul class="project-tech-list">
+                        <li>Kotlin</li>
+                        <li>C/C++</li>
+                        <li>Android Kernel</li>
+                    </ul>
+                    <div class="project-links">
+                        <a href="https://github.com/Rimsovannara/KernelSU-Next" target="_blank"><i class="fa-brands fa-github"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact" id="contact">
+        <div class="section-heading centered">
+            <h2><span class="number">03.</span> What's Next?</h2>
+        </div>
+        <h2 class="contact-title">Get In Touch</h2>
+        <p class="contact-description">I'm currently open for new opportunities. Whether you have a question, a project to discuss, or just want to say hi, I'll try my best to get back to you!</p>
+        
+        <div class="social-links-grid">
+            <a href="https://t.me/RIM_SOVANNARA" class="social-btn telegram" target="_blank">
+                <i class="fa-brands fa-telegram"></i> Telegram
+            </a>
+            <a href="https://discord.gg/evuDPXhD" class="social-btn discord" target="_blank">
+                <i class="fa-brands fa-discord"></i> Discord
+            </a>
+            <a href="https://m.me/sovannararim" class="social-btn messenger" target="_blank">
+                <i class="fa-brands fa-facebook-messenger"></i> Messenger
+            </a>
+            <a href="https://wa.me/855964908348" class="social-btn whatsapp" target="_blank">
+                <i class="fa-brands fa-whatsapp"></i> WhatsApp
+            </a>
+            <a href="https://www.facebook.com/sovannararim/" class="social-btn facebook" target="_blank">
+                <i class="fa-brands fa-facebook-f"></i> Facebook
+            </a>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-links">
+            <a href="https://github.com/Rimsovannara" target="_blank"><i class="fa-brands fa-github"></i></a>
+        </div>
+        <p>Built with ❤️ by Rim Sovannara</p>
     </footer>
-  </main>
 
-  <script>
-    // Utility functions
-    const utils = {
-      debounce(func, wait) {
-        let timeout;
-        return function executedFunction(...args) {
-          const later = () => {
-            clearTimeout(timeout);
-            func(...args);
-          };
-          clearTimeout(timeout);
-          timeout = setTimeout(later, wait);
-        };
-      },
-
-      getElement(id) {
-        const element = document.getElementById(id);
-        if (!element) {
-          console.error(`Element with id '${id}' not found`);
-        }
-        return element;
-      }
-    };
-
-    // Theme management
-    class ThemeManager {
-      constructor() {
-        this.themeToggle = utils.getElement('themeToggle');
-        this.themeIcon = this.themeToggle?.querySelector('i');
-        this.body = document.body;
-
-        if (!this.themeToggle || !this.themeIcon) {
-          console.error('Theme toggle elements not found');
-          return;
-        }
-
-        this.init();
-      }
-
-      init() {
-        this.loadSavedTheme();
-        this.bindEvents();
-      }
-
-      bindEvents() {
-        this.themeToggle.addEventListener('click', () => this.toggleTheme());
-        this.themeToggle.addEventListener('keydown', (e) => {
-          if (e.key === 'Enter' || e.key === ' ') {
-            e.preventDefault();
-            this.toggleTheme();
-          }
-        });
-      }
-
-      toggleTheme() {
-        try {
-          this.body.classList.toggle('dark-mode');
-
-          if (this.body.classList.contains('dark-mode')) {
-            this.themeIcon.classList.remove('fa-moon');
-            this.themeIcon.classList.add('fa-sun');
-            localStorage.setItem('theme', 'dark');
-          } else {
-            this.themeIcon.classList.remove('fa-sun');
-            this.themeIcon.classList.add('fa-moon');
-            localStorage.setItem('theme', 'light');
-          }
-        } catch (error) {
-          console.error('Error toggling theme:', error);
-        }
-      }
-
-      loadSavedTheme() {
-        try {
-          const savedTheme = localStorage.getItem('theme');
-          if (savedTheme === 'dark') {
-            this.body.classList.add('dark-mode');
-            this.themeIcon.classList.remove('fa-moon');
-            this.themeIcon.classList.add('fa-sun');
-          }
-        } catch (error) {
-          console.error('Error loading saved theme:', error);
-        }
-      }
-    }
-
-    // Animation manager
-    class AnimationManager {
-      constructor() {
-        this.init();
-      }
-
-      init() {
-        this.setupParallax();
-        this.setupLogoInteraction();
-      }
-
-      setupParallax() {
-        const bg = document.querySelector('.animated-bg');
-        if (!bg) return;
-
-        const handleMouseMove = utils.debounce((e) => {
-          try {
-            const x = (window.innerWidth - e.pageX) / 50;
-            const y = (window.innerHeight - e.pageY) / 50;
-            bg.style.transform = `translate(${x}px, ${y}px)`;
-          } catch (error) {
-            console.error('Error in parallax effect:', error);
-          }
-        }, 16); // ~60fps
-
-        document.addEventListener('mousemove', handleMouseMove);
-      }
-
-      setupLogoInteraction() {
-        const logo = document.querySelector('.logo');
-        if (!logo) return;
-
-        logo.addEventListener('click', () => {
-          // Remove class to reset animation if clicked quickly again
-          logo.classList.remove('clicked');
-
-          // Force reflow to restart animation
-          void logo.offsetWidth;
-
-          logo.classList.add('clicked');
-
-          // Optional: Add a haptic vibration for mobile users
-          if (navigator.vibrate) {
-            navigator.vibrate(50);
-          }
-        });
-
-        logo.addEventListener('keydown', (e) => {
-          if (e.key === 'Enter' || e.key === ' ') {
-            e.preventDefault();
-            logo.click();
-          }
-        });
-      }
-    }
-
-    // Performance monitoring
-    class PerformanceMonitor {
-      constructor() {
-        this.init();
-      }
-
-      init() {
-        if ('performance' in window) {
-          window.addEventListener('load', () => {
-            setTimeout(() => {
-              this.logPerformance();
-            }, 0);
-          });
-        }
-      }
-
-      logPerformance() {
-        try {
-          const perfData = performance.getEntriesByType('navigation')[0];
-          if (perfData) {
-            console.log(`Page load time: ${Math.round(perfData.loadEventEnd - perfData.loadEventStart)}ms`);
-          }
-        } catch (error) {
-          console.error('Error logging performance:', error);
-        }
-      }
-    }
-
-
-
-    // Error handling
-    window.addEventListener('error', (event) => {
-      console.error('Global error:', event.error);
-    });
-
-    window.addEventListener('unhandledrejection', (event) => {
-      console.error('Unhandled promise rejection:', event.reason);
-    });
-
-    // Initialize when DOM is ready
-    document.addEventListener('DOMContentLoaded', () => {
-      try {
-        // Set current year
-        const yearElement = utils.getElement('currentYear');
-        if (yearElement) {
-          yearElement.textContent = new Date().getFullYear();
-        }
-
-        // Initialize managers
-        new ThemeManager();
-        new AnimationManager();
-        new PerformanceMonitor();
-      } catch (error) {
-        console.error('Error initializing application:', error);
-      }
-    });
-
-
-  </script>
 </body>
-
 </html>
