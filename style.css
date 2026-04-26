@@ -183,6 +183,11 @@ section {
     color: var(--text-main);
     cursor: pointer;
     z-index: 1000;
+    /* Reset native <button> styles */
+    background: none;
+    border: none;
+    padding: 0;
+    line-height: 1;
 }
 
 .nav-links {
@@ -470,6 +475,9 @@ section {
 
 .contact-title {
     font-size: clamp(40px, 5vw, 60px);
+    font-family: var(--font-display);
+    font-weight: 800;
+    color: var(--text-main);
     margin-bottom: 20px;
 }
 
@@ -509,11 +517,10 @@ section {
 }
 
 /* Brand Colors on Hover */
-.telegram:hover { border-color: #2CA5E0; color: #2CA5E0;}
-
-.whatsapp:hover { border-color: #25D366; color: #25D366;}
-.facebook:hover { border-color: #1877F2; color: #1877F2;}
-.messenger:hover { border-color: #00B2FF; color: #00B2FF;}
+.telegram:hover  { border-color: #2CA5E0; color: #2CA5E0; }
+.whatsapp:hover  { border-color: #25D366; color: #25D366; }
+.facebook:hover  { border-color: #1877F2; color: #1877F2; }
+.messenger:hover { border-color: #00B2FF; color: #00B2FF; }
 
 /* Footer */
 .footer {
@@ -693,5 +700,8 @@ section {
         animation-duration: 0.01ms !important;
         transition-duration: 0.01ms !important;
         animation-iteration-count: 1 !important;
+    }
+    html {
+        scroll-behavior: auto;
     }
 }
