@@ -82,7 +82,7 @@ body {
 a {
     text-decoration: none;
     color: var(--accent);
-    transition: all 0.3s ease;
+    transition: color 0.3s ease;
 }
 
 /* Accessibility: Focus Styles */
@@ -260,7 +260,7 @@ section {
     margin-top: 30px;
     margin-right: 15px;
     margin-bottom: 10px;
-    transition: all 0.3s ease;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease, border-color 0.3s ease;
 }
 
 .btn-primary {
@@ -288,7 +288,7 @@ section {
 }
 
 .btn-primary:active, .btn-secondary:active {
-    transform: scale(0.96);
+    transform: translateY(-2px) scale(0.96);
 }
 
 /* Hero Section */
@@ -389,7 +389,10 @@ section {
     border-radius: 12px;
     padding: 30px 20px;
     text-align: center;
-    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1),
+                border-color 0.4s cubic-bezier(0.4, 0, 0.2, 1),
+                background 0.4s cubic-bezier(0.4, 0, 0.2, 1),
+                box-shadow 0.4s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .skill-card:hover {
@@ -431,7 +434,9 @@ section {
     backdrop-filter: blur(20px);
     display: flex;
     align-items: center;
-    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1),
+                border-color 0.4s cubic-bezier(0.4, 0, 0.2, 1),
+                box-shadow 0.4s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .project-card:hover {
@@ -532,12 +537,12 @@ section {
     gap: 10px;
     padding: 14px 28px;
     border-radius: 12px;
-    background: var(--bg-light); 
+    background: var(--bg-light);
     backdrop-filter: blur(10px);
     color: var(--text-main);
     font-weight: 500;
     border: 1px solid var(--border-glass);
-    transition: all 0.3s ease;
+    transition: transform 0.3s ease, background 0.3s ease, border-color 0.3s ease, color 0.3s ease;
 }
 
 .social-btn:hover {
@@ -545,7 +550,7 @@ section {
     background: rgba(255, 255, 255, 0.08);
 }
 .social-btn:active {
-    transform: scale(0.96);
+    transform: translateY(-3px) scale(0.96);
 }
 .social-btn i {
     font-size: 18px;
@@ -607,7 +612,7 @@ section {
     color: var(--text-main);
     font-size: 18px;
     border: 1px solid var(--border-glass);
-    transition: all 0.3s ease;
+    transition: transform 0.3s ease, background 0.3s ease;
 }
 
 .footer-socials a:hover {
@@ -616,7 +621,7 @@ section {
 }
 
 .footer-socials a:active {
-    transform: scale(0.96);
+    transform: translateY(-3px) scale(0.96);
 }
 
 .footer-socials a:focus-visible {
