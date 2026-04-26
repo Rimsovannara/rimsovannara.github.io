@@ -31,7 +31,7 @@
 
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Outfit:wght@400;600;800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css?v=2">
+    <link rel="stylesheet" href="style.css">
     <!-- Font Awesome for Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
@@ -45,9 +45,9 @@
             <a href="#" class="logo">Sovannara<span class="text-gradient">.dev</span></a>
             
             <!-- Mobile Menu Button -->
-            <div class="menu-btn" id="menu-btn" aria-label="Toggle Navigation Menu" role="button" tabindex="0">
+            <button class="menu-btn" id="menu-btn" aria-label="Toggle Navigation Menu" aria-expanded="false">
                 <i class="fa-solid fa-bars"></i>
-            </div>
+            </button>
 
             <ul class="nav-links" id="nav-links">
                 <li><a href="#home">About</a></li>
@@ -72,7 +72,7 @@
         </div>
         <div class="hero-image reveal delay-2">
             <div class="image-wrapper">
-                <img src="profile.jpg" alt="Rim Sovannara" fetchpriority="high" onerror="this.src='https://ui-avatars.com/api/?name=Rim+Sovannara&size=400&background=0d1117&color=2196F3'">
+                <img src="profile.jpg" alt="Rim Sovannara" width="320" height="320" fetchpriority="high" onerror="this.src='https://ui-avatars.com/api/?name=Rim+Sovannara&size=400&background=0d1117&color=2196F3'">
             </div>
         </div>
     </section>
@@ -162,20 +162,20 @@
         <div class="section-heading centered reveal">
             <h2><span class="number">03.</span> What's Next?</h2>
         </div>
-        <h2 class="contact-title reveal delay-1">Get In Touch</h2>
+        <p class="contact-title reveal delay-1">Get In Touch</p>
         <p class="contact-description reveal delay-2">I'm currently open for new opportunities. Whether you have a question, a project to discuss, or just want to say hi, I'll try my best to get back to you!</p>
         
         <div class="social-links-grid reveal delay-3">
-            <a href="https://t.me/RIM_SOVANNARA" class="social-btn telegram" target="_blank" rel="noopener noreferrer">
+            <a href="https://t.me/RIM_SOVANNARA" class="social-btn telegram" target="_blank" rel="noopener noreferrer" aria-label="Contact on Telegram">
                 <i class="fa-brands fa-telegram"></i> Telegram
             </a>
-            <a href="https://m.me/sovannararim" class="social-btn messenger" target="_blank" rel="noopener noreferrer">
+            <a href="https://m.me/sovannararim" class="social-btn messenger" target="_blank" rel="noopener noreferrer" aria-label="Message on Messenger">
                 <i class="fa-brands fa-facebook-messenger"></i> Messenger
             </a>
-            <a href="https://wa.me/855964908348" class="social-btn whatsapp" target="_blank" rel="noopener noreferrer">
+            <a href="https://wa.me/855964908348" class="social-btn whatsapp" target="_blank" rel="noopener noreferrer" aria-label="Chat on WhatsApp">
                 <i class="fa-brands fa-whatsapp"></i> WhatsApp
             </a>
-            <a href="https://www.facebook.com/sovannararim/" class="social-btn facebook" target="_blank" rel="noopener noreferrer">
+            <a href="https://www.facebook.com/sovannararim/" class="social-btn facebook" target="_blank" rel="noopener noreferrer" aria-label="Visit Facebook Profile">
                 <i class="fa-brands fa-facebook-f"></i> Facebook
             </a>
         </div>
@@ -211,8 +211,10 @@
 
         menuBtn.addEventListener('click', () => {
             navLinks.classList.toggle('active');
+            const isOpen = navLinks.classList.contains('active');
+            menuBtn.setAttribute('aria-expanded', isOpen);
             const icon = menuBtn.querySelector('i');
-            if(navLinks.classList.contains('active')) {
+            if (isOpen) {
                 icon.classList.remove('fa-bars');
                 icon.classList.add('fa-xmark');
             } else {
@@ -225,6 +227,7 @@
         navItems.forEach(item => {
             item.addEventListener('click', () => {
                 navLinks.classList.remove('active');
+                menuBtn.setAttribute('aria-expanded', 'false');
                 menuBtn.querySelector('i').classList.remove('fa-xmark');
                 menuBtn.querySelector('i').classList.add('fa-bars');
             });

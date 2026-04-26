@@ -259,7 +259,7 @@ section {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    min-height: 100vh;
+    min-height: 100svh;
     padding-top: 150px;
     gap: 40px;
 }
@@ -510,7 +510,7 @@ section {
 
 /* Brand Colors on Hover */
 .telegram:hover { border-color: #2CA5E0; color: #2CA5E0;}
-.discord:hover { border-color: #7289DA; color: #7289DA;}
+
 .whatsapp:hover { border-color: #25D366; color: #25D366;}
 .facebook:hover { border-color: #1877F2; color: #1877F2;}
 .messenger:hover { border-color: #00B2FF; color: #00B2FF;}
@@ -684,5 +684,14 @@ section {
 
     .project-card {
         padding: 28px 20px;
+    }
+}
+
+/* Accessibility: respect user motion preferences */
+@media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        transition-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
     }
 }
