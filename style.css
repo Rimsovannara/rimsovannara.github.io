@@ -92,6 +92,27 @@ a {
     border-radius: 4px;
 }
 
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+    width: 10px;
+}
+::-webkit-scrollbar-track {
+    background: var(--bg-color);
+}
+::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 5px;
+}
+::-webkit-scrollbar-thumb:hover {
+    background: rgba(255, 255, 255, 0.3);
+}
+
+/* Text Selection */
+::selection {
+    background: var(--accent-glow);
+    color: var(--text-main);
+}
+
 /* Scroll Reveal */
 .reveal {
     opacity: 0;
@@ -264,6 +285,10 @@ section {
     background: rgba(255, 255, 255, 0.08);
     border-color: rgba(255, 255, 255, 0.2);
     transform: translateY(-2px);
+}
+
+.btn-primary:active, .btn-secondary:active {
+    transform: scale(0.96);
 }
 
 /* Hero Section */
@@ -519,6 +544,9 @@ section {
     transform: translateY(-3px);
     background: rgba(255, 255, 255, 0.08);
 }
+.social-btn:active {
+    transform: scale(0.96);
+}
 .social-btn i {
     font-size: 18px;
 }
@@ -585,6 +613,14 @@ section {
 .footer-socials a:hover {
     background: rgba(255, 255, 255, 0.08);
     transform: translateY(-3px);
+}
+
+.footer-socials a:active {
+    transform: scale(0.96);
+}
+
+.footer-socials a:focus-visible {
+    border-radius: 50%;
 }
 
 .footer-bottom {
