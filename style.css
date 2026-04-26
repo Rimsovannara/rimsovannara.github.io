@@ -85,6 +85,13 @@ a {
     transition: all 0.3s ease;
 }
 
+/* Accessibility: Focus Styles */
+:focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 4px;
+    border-radius: 4px;
+}
+
 /* Scroll Reveal */
 .reveal {
     opacity: 0;
@@ -604,8 +611,8 @@ section {
     }
 
     .nav-links {
-        position: fixed;
-        top: 65px;
+        position: absolute;
+        top: 100%;
         left: 0;
         width: 100%;
         z-index: 99;
