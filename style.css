@@ -120,8 +120,8 @@ section {
     margin: 0 auto;
     padding: 120px 20px;
     position: relative;
-    /* Prevent any child from widening the section */
-    overflow: clip;
+    /* Prevent any child from widening the section, but allow vertical overflow */
+    overflow-x: clip;
 }
 
 .section-heading {
@@ -523,12 +523,12 @@ section {
     font-size: 18px;
 }
 
-/* Brand Colors on Hover */
-.github:hover    { border-color: var(--text-main); color: var(--text-main); }
-.telegram:hover  { border-color: #2CA5E0; color: #2CA5E0; }
-.whatsapp:hover  { border-color: #25D366; color: #25D366; }
-.facebook:hover  { border-color: #1877F2; color: #1877F2; }
-.messenger:hover { border-color: #00B2FF; color: #00B2FF; }
+/* Brand Colors on Hover — scoped to contact section only */
+.social-links-grid .github:hover    { border-color: var(--text-main); color: var(--text-main); }
+.social-links-grid .telegram:hover  { border-color: #2CA5E0; color: #2CA5E0; }
+.social-links-grid .whatsapp:hover  { border-color: #25D366; color: #25D366; }
+.social-links-grid .facebook:hover  { border-color: #1877F2; color: #1877F2; }
+.social-links-grid .messenger:hover { border-color: #00B2FF; color: #00B2FF; }
 
 /* Footer */
 .footer {

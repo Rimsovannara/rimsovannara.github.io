@@ -32,8 +32,11 @@
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Outfit:wght@400;600;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
-    <!-- Font Awesome for Icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Preload LCP image -->
+    <link rel="preload" as="image" href="profile.jpg">
+    <!-- Font Awesome — loaded non-blocking to prevent render delay -->
+    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"></noscript>
 </head>
 <body>
     <!-- Ambient Glows -->
@@ -240,6 +243,17 @@
                 menuBtn.querySelector('i').classList.remove('fa-xmark');
                 menuBtn.querySelector('i').classList.add('fa-bars');
             });
+        });
+
+        // Close menu on Escape key (WAI-ARIA requirement)
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && navLinks.classList.contains('active')) {
+                navLinks.classList.remove('active');
+                menuBtn.setAttribute('aria-expanded', 'false');
+                menuBtn.querySelector('i').classList.remove('fa-xmark');
+                menuBtn.querySelector('i').classList.add('fa-bars');
+                menuBtn.focus(); // Return focus to trigger button
+            }
         });
 
         // Scroll Reveal Animations using IntersectionObserver
