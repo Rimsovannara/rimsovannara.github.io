@@ -87,7 +87,6 @@ npx serve .
 | Platform  | Link |
 |-----------|------|
 | 💬 Telegram  | [@RIM_SOVANNARA](https://t.me/RIM_SOVANNARA) |
-| 🎮 Discord   | [Join Server](https://discord.gg/evuDPXhD) |
 | 💌 Messenger | [sovannararim](https://m.me/sovannararim) |
 | 📱 WhatsApp  | [+855 96 490 8348](https://wa.me/855964908348) |
 | 📘 Facebook  | [sovannararim](https://www.facebook.com/sovannararim/) |
